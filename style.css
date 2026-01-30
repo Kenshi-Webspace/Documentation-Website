@@ -1,0 +1,39 @@
+html,body,.global-container{
+    margin: 0%;
+}
+
+.global-container{
+    height: 100vh;
+    width: 100vw;
+}
+
+header{
+    height: 20vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+header>.right{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px;
+    font-size:x-large ;
+    border-bottom: 2px solid black;
+    background-color: #CCCCFF;
+}
+
+.info-container{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.contents{
+    min-height: 100vh;
+}
+
+.section-container{
+    min-height: 100vh;
+}
+
