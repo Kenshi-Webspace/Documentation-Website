@@ -4,14 +4,14 @@ html,body,.global-container{
 
 .global-container{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 header{
     height: 20vh;
-    width: 100vw;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
 }
 
 header>.right{
@@ -35,5 +35,46 @@ header>.right{
 
 .section-container{
     min-height: 100vh;
+    margin: 12px;
 }
+
+.section-child{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+.section-child>.heading-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:start;
+    row-gap: 12px;
+    margin: 0%;
+}
+
+.section-child>.heading-container>h1,.section-child>.heading-container>h3{
+    margin: 0%;
+}
+
+.section-child>.heading-container>h3{
+    color:#36454F;
+}
+
+.section-child-content>.content{
+    padding: 2px 2px 2px 0px;
+}
+
+.section-child-content>.code-content{
+    padding: 8px;
+    background-color: #CCCCFF;
+    border:#cce4ff solid 2px;
+    border-radius: 8px;
+}
+
+.contents-sidebar{
+    background-color: #CCCCFF;
+}
+
 
