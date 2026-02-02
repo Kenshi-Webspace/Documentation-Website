@@ -52,6 +52,7 @@ main{
     height: 85vh;
     padding: 12px;
     overflow-y: auto;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .section-child{

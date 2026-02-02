@@ -1,0 +1,60 @@
+import { dataList } from "./dataStore.js";
+
+dataList.forEach(data => {
+    //creating section-child container
+    const sectionChild = document.createElement("section");
+    sectionChild.className = "section-child";
+
+    const headingContainer = document.createElement("div");
+    headingContainer.className = "heading-container";
+
+    // heading container children
+    const h1 = document.createElement("h1");
+    h1.className = "main-heading";
+
+    const h3 = document.createElement("h3");
+    h3.className = "sub-heading";
+
+    //appending to parent container heading
+    headingContainer.appendChild(h1);
+    headingContainer.appendChild(h3);
+
+
+    const sectionChildContent = document.createElement("div");
+    sectionChildContent.className = "section-child-content";
+
+    // section child container children
+    const p = document.createElement("p");
+    p.className = "content";
+
+    // appending to parent container section child
+    sectionChildContent.appendChild(p);
+
+    if (data.code) {
+        const pre = document.createElement("pre");
+        pre.className = "code-content";
+
+        sectionChildContent.appendChild(pre);
+
+        // pre container children
+        const code = document.createElement("code");
+        code.id = "code";
+
+        // appending to parent pre
+        pre.appendChild(code);
+
+        code.textContent = data.code;
+    }
+
+    // setting data
+    h1.textContent = data.heading;
+    h3.textContent = data.subHeading;
+    p.textContent = data.content;
+
+    // appending to parent container sectionchild
+    sectionChild.appendChild(headingContainer);
+    sectionChild.appendChild(sectionChildContent);
+
+    const sectionContainer = document.querySelector(".section-container");
+    sectionContainer.appendChild(sectionChild);
+});
