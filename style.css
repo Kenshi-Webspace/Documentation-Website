@@ -18,6 +18,7 @@ header{
     display: grid;
     grid-template-columns: 1fr 2fr;
     border-bottom: 2px solid #36454F;
+    box-shadow: #36454F 0px 0px 2px;
     z-index: 50;
     position: fixed;
 }
@@ -86,6 +87,7 @@ main{
 .section-child-content>.code-content{
     padding: 8px;
     background-color: #CCCCFF;
+    box-shadow: #36454F 0px 0px 2px;
     border:#cce4ff solid 2px;
     border-radius: 8px;
 }
@@ -93,13 +95,73 @@ main{
 .contents-sidebar{
     background-color: #CCCCFF;
     height: 85vh;
+    overflow: auto;
+    box-shadow: #36454F 0px 0px 5px;
 }
 
 footer{
     min-height: 20vh;
     border-top:2px solid #36454F;
-    background-color: #6247aa;
-background-image: linear-gradient(316deg, #6247aa 0%, #a594f9 74%);
+    background-color: #CCCCFF;
+}
+
+.contents-sidebar>.inner-container{
+    padding: 12px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.contents-sidebar>.inner-container>h2{
+    text-align: center;     
+}
+
+.contents-sidebar>.inner-container>ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.contents-sidebar>.inner-container>ul>li{
+    padding: 8px 0;
+    border-bottom: 1px solid #36454F;
+    cursor: pointer;
+    overflow-wrap: break-word;
+    border-radius: 0 0 8px 8px;
+}
+
+.contents-sidebar>.inner-container>ul>li:hover{
+    background-color: #a594f9;
+    color: white;
+    transition: 0.3s;
+}
+
+@media (max-width: 1475px) {
+    header>.right>h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1140px) {
+    header>.right{
+        display: none;
+    }
+
+    header{
+        grid-template-columns: 1fr;
+    }
+
+    .contents-sidebar{
+        display: none;
+    }
+
+    .info-container{
+        grid-template-columns: 1fr;
+    }
 }
 
 

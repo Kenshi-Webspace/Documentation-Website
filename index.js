@@ -49,7 +49,7 @@ dataList.forEach(data => {
     // setting data
     h1.textContent = data.heading;
     h3.textContent = data.subHeading;
-    p.textContent = data.content;
+    p.innerHTML = data.content;
 
     // appending to parent container sectionchild
     sectionChild.appendChild(headingContainer);
@@ -57,4 +57,20 @@ dataList.forEach(data => {
 
     const sectionContainer = document.querySelector(".section-container");
     sectionContainer.appendChild(sectionChild);
+
+
+    // creating sidebar list items
+    const li = document.createElement("li");
+    li.className = "sidebar-list-item";
+    li.textContent = data.heading;
+    li.onclick = function () {
+        sectionChild.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+
+        });
+    };
+
+    const ul = document.querySelector(".contents-sidebar>.inner-container>ul");
+    ul.appendChild(li);
 });
