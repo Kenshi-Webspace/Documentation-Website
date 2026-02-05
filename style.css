@@ -90,13 +90,30 @@ main{
     box-shadow: #36454F 0px 0px 2px;
     border:#cce4ff solid 2px;
     border-radius: 8px;
+    overflow-x: auto;
+}
+
+.code-content>img{
+    position: sticky; /* fixed inside a srollable parent*/
+    top: 0;
+    height: 20px;
+    width: 20px;
+    left: calc(100% - 28px); /*28px from right edge of parent container*/
+    cursor: pointer;
+    z-index: 20;
+}
+
+.code-content>img:hover{
+    filter: brightness(0.8);
+    transition: 0.3s;
+    transform: scale(1.08);
 }
 
 .contents-sidebar{
     background-color: #CCCCFF;
     height: 85vh;
     overflow: auto;
-    box-shadow: #36454F 0px 0px 5px;
+    box-shadow:0px 0px 5px #36454F;
 }
 
 footer{
@@ -140,9 +157,45 @@ footer{
     transition: 0.3s;
 }
 
+footer{
+    height: auto;
+    border-top:2px solid #36454F;
+    background-color: #CCCCFF;
+}
+
+footer>.footer-container{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    margin: 4px;
+    column-gap:20px;
+}
+
+.logo-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-footer>img{
+   border-radius: 8px;
+}
+
 @media (max-width: 1475px) {
     header>.right>h1 {
         font-size: 2.5rem;
+    }
+
+    .code-content>img{
+        left: calc(100% - 20px);
+    }
+
+    footer>.footer-container{
+        font-size: 0.8rem;
+    }
+
+    .logo-footer>img{
+        height: 80px;
+        width: 80px;
     }
 }
 
@@ -161,6 +214,19 @@ footer{
 
     .info-container{
         grid-template-columns: 1fr;
+    }
+
+    .code-content>img{
+        left: calc(100% - 18px);
+    }
+
+     footer>.footer-container{
+        font-size: 0.5rem;
+    }
+
+     .logo-footer>img{
+        height: 60px;
+        width: 60px;
     }
 }
 

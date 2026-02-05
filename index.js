@@ -40,7 +40,26 @@ dataList.forEach(data => {
         const code = document.createElement("code");
         code.id = "code";
 
+        const copyIcon = document.createElement("img");
+        copyIcon.src = "./public/copy.svg";
+        copyIcon.alt = "copy-icon";
+
+
+        copyIcon.onclick = async () => {
+            try {
+                await navigator.clipboard.writeText(data.code);
+                copyIcon.src = "./public/tick.svg";
+                setTimeout(() => {
+                    copyIcon.src = "./public/copy.svg";
+                }, 3000);
+            } catch (error) {
+                console.log("Navigator not supported!");
+                alert("Clipboard API not supported in this browser!");
+            }
+        }
+
         // appending to parent pre
+        pre.appendChild(copyIcon);
         pre.appendChild(code);
 
         code.textContent = data.code;
