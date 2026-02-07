@@ -91,6 +91,10 @@ main{
     border:#cce4ff solid 2px;
     border-radius: 8px;
     overflow-x: auto;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .code-content>img{
@@ -177,7 +181,7 @@ footer>.footer-container{
 }
 
 .logo-footer>img{
-   border-radius: 8px;
+    border-radius: 8px;
 }
 
 @media (max-width: 1475px) {
@@ -187,6 +191,14 @@ footer>.footer-container{
 
     .code-content>img{
         left: calc(100% - 20px);
+    }
+
+    .main-heading{
+        font-size: 1.5rem;
+    }
+
+    .sub-heading{
+        font-size: 1.1rem;
     }
 
     footer>.footer-container{
@@ -220,14 +232,23 @@ footer>.footer-container{
         left: calc(100% - 18px);
     }
 
-     footer>.footer-container{
+    .main-heading{
+        font-size: 1.3rem;
+    }
+
+    .sub-heading{
+        font-size: 1rem;
+    }
+
+    footer>.footer-container{
         font-size: 0.5rem;
     }
 
-     .logo-footer>img{
+    .logo-footer>img{
         height: 60px;
         width: 60px;
     }
 }
+
 
 
